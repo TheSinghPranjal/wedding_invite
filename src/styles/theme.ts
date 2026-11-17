@@ -1,0 +1,31 @@
+export const colors = {
+  midnight: '#0a0e27',
+  deepBlue: '#0d1b3e',
+  royalBlue: '#1a2a5e',
+  skyBlue: '#3a6ea5',
+  emerald: '#2d6b5e',
+  emeraldDark: '#1a4a3a',
+  emeraldLight: '#4a9b8e',
+  gold: '#c9a84c',
+  antiqueGold: '#b8941f',
+  warmGold: '#d4a843',
+  brightGold: '#e8c547',
+  ivory: '#f5f0e8',
+  cream: '#faf3e0',
+  blush: '#f5e6e0',
+  blushPink: '#f0d4c8',
+  amber: '#d4770b',
+  warmAmber: '#e89b30',
+  turmericYellow: '#d4a017',
+  deepRed: '#8b1a1a',
+  white: '#ffffff',
+  black: '#000000',
+};
+
+export const fonts = {
+  serif: "'Cormorant Garamond', 'Playfair Display', Georgia, serif",
+  display: "'Playfair Display', Georgia, serif",
+  sansSerif: "'Inter', 'Helvetica Neue', sans-serif",
+  script: "'Great Vibes', cursive",
+  hindi: "'Noto Serif Devanagari', serif",
+};
