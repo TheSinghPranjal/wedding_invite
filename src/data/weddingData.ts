@@ -3,12 +3,24 @@ export interface WeddingEvent {
   name: string;
   date: string;
   time: string;
+  /** Optional 'HH:mm' / free text end time */
+  endTime?: string;
+  /** Optional custom title / tagline shown by themes that support them */
+  title?: string;
+  tagline?: string;
   venue: string;
   address: string;
   mapsUrl: string;
   description: string;
   dressCode?: string;
+  /** Background image (optional) */
   image?: string;
+  /** Main illustration override (optional image path) */
+  illustration?: string;
+  /** Extra decorative artwork (optional image path) */
+  artwork?: string;
+  /** Per-event colour overrides, e.g. { accent: '#d5ad55' } */
+  themeConfig?: { accent?: string; background?: string; ink?: string };
   theme: 'mehendi' | 'haldi' | 'sangeet' | 'wedding' | 'reception' | 'engagement' | 'custom';
 }
 

@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Pinyon+Script&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Serif+Devanagari:wght@400;500;600;700&display=swap');
+/* Theme 02 - Royal Burgundy & Gold. Everything is prefixed rb- or scoped to .rb / html.rb-active. */
+
+.rb {
+  --burg: #500A20; --wine: #350719; --maroon: #650D25; --gold: #D5AD55; --gold-l: #F1D58B; --mustard: #D9AF35;
+  --ivory: #FFF9ED; --cream: #F6EBDD; --blush: #E8C5C0; --ink: #30231C; --k: 1;
+  font-family: 'Cormorant Garamond', Georgia, serif; color: var(--ivory); background: var(--wine);
+  -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 700px) { .rb { --k: .52; } }
+
+html.rb-active, html.rb-active body { background: #350719; overflow-x: clip; scroll-behavior: auto; }
+html.rb-active ::selection { background: rgba(213, 173, 85, .35); color: #fff9ed; }
+html.rb-active ::-webkit-scrollbar { width: 6px; }
+html.rb-active ::-webkit-scrollbar-track { background: #350719; }
+html.rb-active ::-webkit-scrollbar-thumb { background: rgba(213, 173, 85, .5); border-radius: 3px; }
+html.rb-active.intro-open, html.rb-active.intro-open body { overflow: hidden; }
+html.rb-active.lenis, html.rb-active.lenis body { height: auto; }
+
+.rb *, .rb *::before, .rb *::after { box-sizing: border-box; }
+.rb h1, .rb h2, .rb h3, .rb p { margin: 0; }
+.rb svg { display: block; max-width: none; }
+
+/* ---------- typography ---------- */
+.rb-cap { font-family: 'Cinzel', 'Playfair Display', serif; letter-spacing: .18em; text-transform: uppercase; }
+.rb-script { font-family: 'Pinyon Script', 'Great Vibes', cursive; font-weight: 400; }
+.rb-hi, .rb-om { font-family: 'Noto Serif Devanagari', serif; }
+.rb-gold-text { background: linear-gradient(180deg, #FBE9B0 0%, #D5AD55 48%, #A5792C 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rb-eyebrow { font-family: 'Cinzel', serif; font-size: clamp(.7rem, 1.7vw, .9rem); letter-spacing: .38em; text-transform: uppercase; color: var(--gold); }
+.rb-body { font-size: clamp(1.05rem, 2.4vw, 1.4rem); line-height: 1.5; }
+.rb-names { font-family: 'Pinyon Script', cursive; font-size: clamp(3.2rem, 13vw, 8.5rem); line-height: 1.05; }
+.rb-names-cap { font-family: 'Cinzel', serif; font-size: clamp(1.9rem, 6vw, 4rem); letter-spacing: .12em; line-height: 1.15; }
+.rb-title { font-family: 'Cinzel', serif; font-weight: 600; font-size: clamp(2.2rem, 7.5vw, 5.4rem); letter-spacing: .1em; line-height: 1.1; }
+.rb-center { text-align: center; }
+
+/* ---------- scene scaffolding ---------- */
+.rb-scene { position: relative; width: 100%; overflow: hidden; }
+.rb-stage { position: relative; width: 100%; height: 100vh; height: 100svh; overflow: hidden; }
+.rb-fill { position: absolute; inset: 0; }
+.rb-z1 { position: absolute; z-index: 1; } .rb-z2 { position: absolute; z-index: 2; } .rb-z3 { position: absolute; z-index: 3; } .rb-z4 { position: absolute; z-index: 4; }
+.rb-content { position: relative; z-index: 5; }
+
+.rb-burg-bg { background: radial-gradient(ellipse at 50% 30%, #7A1230 0%, #500A20 45%, #350719 100%); }
+.rb-rose-bg {
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(150, 30, 55, .35), transparent 62%),
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300'><g fill='none' stroke='%23b8405c' stroke-opacity='.22' stroke-width='3'><circle cx='80' cy='80' r='14'/><circle cx='80' cy='80' r='30'/><circle cx='80' cy='80' r='48'/><circle cx='80' cy='80' r='68'/><circle cx='230' cy='210' r='12'/><circle cx='230' cy='210' r='28'/><circle cx='230' cy='210' r='46'/><circle cx='230' cy='210' r='66'/><circle cx='250' cy='40' r='20'/><circle cx='250' cy='40' r='38'/><circle cx='40' cy='250' r='22'/><circle cx='40' cy='250' r='42'/></g></svg>"),
+    linear-gradient(180deg, #5A0C24, #350719);
+}
+.rb-plum-bg { background: radial-gradient(ellipse at 50% 20%, #4A1230 0%, #2B0A1E 70%, #1D0615 100%); }
+.rb-ivory-bg { background: radial-gradient(ellipse at 50% 0%, #FFFDF6, #FFF6E6 55%, #F6EBDD 100%); color: var(--ink); }
+.rb-blush-bg { background: linear-gradient(180deg, #FFF9ED 0%, #F8E6DF 100%); color: var(--ink); }
+.rb-grain::after { content: ''; position: absolute; inset: 0; pointer-events: none; mix-blend-mode: overlay; opacity: .4; z-index: 6;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .5  0 0 0 0 .5  0 0 0 0 .5  0 0 0 .5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+.rb-vignette { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at center, transparent 45%, rgba(20, 2, 10, .6) 100%); }
+
+/* ---------- art helpers ---------- */
+.rb-sides { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; color: var(--gold); }
+.rb-orn { position: absolute; width: calc(var(--s) * var(--k)); height: calc(var(--s) * var(--k)); margin-top: calc(var(--s) * var(--k) * -.5); opacity: 0; will-change: transform, opacity; }
+.rb-orn svg { width: 100%; height: 100%; }
+@media (prefers-reduced-motion: reduce) { .rb-orn { opacity: var(--op); } }
+.rb-mandala { overflow: visible; }
+.rb-ring { transform-box: fill-box; transform-origin: 50% 50%; animation: rb-spin var(--dur, 90s) linear infinite; }
+@keyframes rb-spin { to { transform: rotate(calc(360deg * var(--dir, 1))); } }
+.rb-glow { stroke-width: 3.2; opacity: .22; }
+.rb-sway { transform-box: fill-box; transform-origin: 50% 0; animation: rb-sway 5s ease-in-out infinite alternate; }
+@keyframes rb-sway { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+.rb-hang { transform-origin: 50% 0; animation: rb-sway 4.8s ease-in-out infinite alternate; }
+.rb-swing { transform-origin: 50% 0; animation: rb-swing 5.5s ease-in-out infinite alternate; }
+@keyframes rb-swing { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
+.rb-pulse { animation: rb-pulse 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes rb-pulse { 0%, 100% { opacity: .55; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.08); } }
+.rb-flame { animation: rb-flicker 1.5s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes rb-flicker { 0% { transform: scale(1, .94); opacity: .88; } 50% { transform: scale(1.08, 1.06); opacity: 1; } 100% { transform: scale(.95, .98); opacity: .8; } }
+.rb-fx { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.rb-petal { position: absolute; top: -40px; animation: rb-fall linear infinite; will-change: transform; }
+@keyframes rb-fall { 0% { transform: translate3d(0, -40px, 0) rotate(0); opacity: 0; } 8% { opacity: 1; } 50% { transform: translate3d(var(--sway), 50vh, 0) rotate(200deg); } 100% { transform: translate3d(calc(var(--sway) * -.6), 110vh, 0) rotate(420deg); opacity: .6; } }
+.rb-dust { position: absolute; border-radius: 50%; background: radial-gradient(circle, #FFF2C0, #D5AD55 60%, transparent 72%); animation: rb-float ease-in-out infinite; }
+@keyframes rb-float { 0%, 100% { transform: translateY(0) scale(1); opacity: .2; } 50% { transform: translateY(-26px) scale(1.5); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .rb-ring, .rb-sway, .rb-hang, .rb-swing, .rb-pulse, .rb-flame, .rb-petal, .rb-dust { animation: none !important; } }
+
+/* ---------- ui ---------- */
+.rb-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.8rem; border: 1px solid var(--gold); color: var(--gold-l); font-family: 'Cinzel', serif; font-size: .78rem; letter-spacing: .28em; text-transform: uppercase; background: rgba(53, 7, 25, .35); cursor: pointer; text-decoration: none; transition: all .35s; }
+.rb-btn:hover { background: var(--gold); color: var(--wine); }
+.rb-btn--dark { border-color: var(--burg); color: var(--burg); background: transparent; } .rb-btn--dark:hover { background: var(--burg); color: var(--gold-l); }
+.rb-btn[aria-disabled='true'] { opacity: .45; cursor: not-allowed; pointer-events: none; }
+.rb-btn:focus-visible, .rb-field:focus-visible { outline: 2px solid var(--gold-l); outline-offset: 3px; }
+.rb-back { position: fixed; top: 14px; left: 14px; z-index: 60; padding: .45rem 1rem; border: 1px solid rgba(213, 173, 85, .6); border-radius: 999px; background: rgba(53, 7, 25, .7); backdrop-filter: blur(6px); color: var(--gold-l); font-family: 'Cinzel', serif; font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; }
+.rb-back:hover { background: rgba(80, 10, 32, .9); }
+.rb-music { position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 52px; height: 52px; border-radius: 50%; border: 1px solid var(--gold); background: rgba(53, 7, 25, .75); backdrop-filter: blur(6px); display: grid; place-items: center; cursor: pointer; transition: transform .3s; }
+.rb-music:hover { transform: scale(1.07); }
+.rb-music svg { width: 20px; height: 20px; fill: var(--gold); }
+.rb-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, #A5792C, #F1D58B, #A5792C); }
+
+.rb-field { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(213, 173, 85, .6); padding: .75rem 0; color: var(--ivory); font: inherit; font-size: 1.2rem; }
+.rb-field::placeholder { color: rgba(255, 249, 237, .4); }
+.rb-label { font-family: 'Cinzel', serif; font-size: .7rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); display: block; }
+.rb-err { color: #FFB4A2; font-size: .95rem; margin-top: .25rem; }
+.rb-choice { flex: 1; min-height: 48px; display: grid; place-items: center; border: 1px solid rgba(213, 173, 85, .6); font-size: 1rem; cursor: pointer; text-align: center; padding: 0 .5rem; }
+.rb-choice:has(:checked) { background: var(--gold); color: var(--wine); }
+
+/* date block (month / weekday | day | time / year) after reference 6 */
+.rb-date { display: grid; justify-items: center; gap: .15rem; }
+.rb-date__row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: .9rem; width: min(100%, 26rem); }
+.rb-date__side { border-top: 1px solid currentColor; border-bottom: 1px solid currentColor; padding: .35rem 0; font-family: 'Cinzel', serif; font-size: clamp(.7rem, 2.2vw, 1rem); letter-spacing: .18em; text-align: center; }
+.rb-date__day { font-family: 'Cinzel', serif; font-weight: 600; font-size: clamp(2.8rem, 9vw, 4.6rem); line-height: 1; }
+.rb-date__sm { font-family: 'Cinzel', serif; letter-spacing: .4em; font-size: clamp(.85rem, 2.4vw, 1.2rem); }
+
+/* photo slot */
+.rb-photo { position: relative; overflow: hidden; border-radius: 999px 999px 10px 10px; border: 3px solid var(--gold); box-shadow: 0 0 0 7px rgba(255, 249, 237, .9), 0 0 0 8px var(--gold), 0 24px 50px -22px rgba(53, 7, 25, .55); aspect-ratio: 3 / 4; background: linear-gradient(160deg, #F6EBDD, #E8C5C0); }
+.rb-photo img { width: 100%; height: 100%; object-fit: cover; }
+.rb-photo__ph { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: .5rem; color: rgba(80, 10, 32, .55); font-family: 'Cinzel', serif; letter-spacing: .3em; font-size: .72rem; text-transform: uppercase; }
+.rb-photo__ph b { font-family: 'Pinyon Script', cursive; font-weight: 400; font-size: 4.5rem; letter-spacing: 0; color: rgba(80, 10, 32, .4); }
+
+/* intro */
+.rb-intro { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 1.5rem; background: #350719; }
+.rb-intro__card { position: relative; width: min(100%, 26rem); border: 1px solid rgba(213, 173, 85, .7); outline: 1px solid rgba(213, 173, 85, .3); outline-offset: -8px; padding: 3rem 1.8rem; text-align: center; background: radial-gradient(ellipse at 50% 0%, rgba(122, 18, 48, .6), transparent 70%); }
+
+@media (max-width: 700px) {
+  .rb-back { font-size: .6rem; padding: .35rem .8rem; }
+  .rb-music { width: 46px; height: 46px; right: 12px; bottom: 12px; }
+}
+
+/* ---------- shared scene bits ---------- */
+.rb-fit { width: 100%; height: 100%; }
+.rb-layer svg:not(.rb-fit) { width: 100%; height: auto; }
+.rb-torana { position: absolute; top: 0; left: 0; width: 100%; height: clamp(54px, 13svh, 110px); }
+.rb-spot { position: absolute; inset: 0; background: conic-gradient(from 180deg at 50% -6%, transparent 0 40deg, rgba(255, 226, 150, .22) 52deg, transparent 64deg 296deg, rgba(255, 226, 150, .22) 308deg, transparent 320deg), radial-gradient(ellipse at 50% 82%, rgba(241, 213, 139, .35), transparent 55%); animation: rb-pulse-o 4s ease-in-out infinite; }
+@keyframes rb-pulse-o { 50% { opacity: .55; } }
+.rb-dance { transform-origin: 50% 100%; animation: rb-dance 3.2s ease-in-out infinite alternate; }
+@keyframes rb-dance { from { transform: rotate(-1.5deg); } to { transform: rotate(1.5deg); } }
+@media (prefers-reduced-motion: reduce) { .rb-spot, .rb-dance { animation: none; } }
+@media (prefers-reduced-motion: no-preference) { .rb-scene.is-pre .g-anim { opacity: 0; } }
+.rb-word { display: inline-block; }
+.rb-card { container-type: inline-size; position: relative; }
+.rb-card__txt { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 25cqw 11cqw 8cqw; color: #350719; }
+.rb-link { color: inherit; text-underline-offset: 4px; }
+.rb-sprig { position: absolute; pointer-events: none; }
+.rb-card .rb-date__side { font-size: 2.6cqw; } .rb-card .rb-date__day { font-size: 11cqw; } .rb-card .rb-date__sm { font-size: 3.2cqw; } .rb-card .rb-date__row { width: 100%; gap: 3cqw; }

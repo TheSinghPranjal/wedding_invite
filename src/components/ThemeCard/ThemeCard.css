@@ -11,3 +11,6 @@
 .tcard__tags { list-style: none; display: flex; flex-wrap: wrap; gap: .5rem; padding: 0; margin: 1rem 0 1.5rem; }
 .tcard__tags li { padding: .2rem .8rem; border: 1px solid #b08a3a; border-radius: 999px; font-size: .85rem; color: #7a5a1a; background: #f6ecd2; }
 @media (max-width: 720px) { .tcard { grid-template-columns: 1fr; } .tcard__arch { max-width: 320px; margin: 0 auto; } }
+
+.tcard:nth-child(even) .tcard__frame { order: 2; }
+@media (max-width: 720px) { .tcard:nth-child(even) .tcard__frame { order: 0; } }

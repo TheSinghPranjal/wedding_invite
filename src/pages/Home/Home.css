@@ -66,3 +66,5 @@
   .hero__card--phone { right: -14px; } .hero__card--note { left: -14px; }
 }
 @media (prefers-reduced-motion: reduce) { .home *, .home *::before { animation: none !important; transition: none !important; scroll-behavior: auto; } }
+
+.themes { display: grid; gap: clamp(2rem, 5vw, 3.5rem); }
