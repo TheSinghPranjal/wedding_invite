@@ -1,5 +1,5 @@
 import { music, useMusic } from '../../lib/music';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 
 export default function MusicToggle() {
   const { playing, failed } = useMusic();

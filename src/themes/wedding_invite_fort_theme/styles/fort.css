@@ -1,38 +1,9 @@
-@import 'tailwindcss';
-
-@theme {
-  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-script: 'Great Vibes', cursive;
-  --font-sans: 'Inter', 'Helvetica Neue', sans-serif;
-  --font-hindi: 'Noto Serif Devanagari', serif;
-
-  --color-midnight: #0a0e27;
-  --color-deep-blue: #0d1b3e;
-  --color-royal-blue: #1a2a5e;
-  --color-sky-blue: #3a6ea5;
-  --color-emerald: #2d6b5e;
-  --color-emerald-dark: #1a4a3a;
-  --color-emerald-light: #4a9b8e;
-  --color-gold: #c9a84c;
-  --color-antique-gold: #b8941f;
-  --color-warm-gold: #d4a843;
-  --color-bright-gold: #e8c547;
-  --color-ivory: #f5f0e8;
-  --color-cream: #faf3e0;
-  --color-blush: #f5e6e0;
-  --color-blush-pink: #f0d4c8;
-  --color-amber: #d4770b;
-  --color-warm-amber: #e89b30;
-  --color-turmeric: #d4a017;
-  --color-deep-red: #8b1a1a;
-}
-
-html {
+/* Theme 01 - Royal Palace Wedding. Global rules are scoped to html.fort-active (toggled while the theme is mounted). */
+html.fort-active {
   scroll-behavior: auto;
 }
 
-body {
+html.fort-active body {
   margin: 0;
   padding: 0;
   background-color: #0a0e27;
@@ -43,35 +14,29 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-::selection {
+html.fort-active ::selection {
   background-color: rgba(201, 168, 76, 0.3);
   color: #f5f0e8;
 }
 
 /* Custom scrollbar */
-::-webkit-scrollbar {
+html.fort-active ::-webkit-scrollbar {
   width: 6px;
 }
-::-webkit-scrollbar-track {
+html.fort-active ::-webkit-scrollbar-track {
   background: #0a0e27;
 }
-::-webkit-scrollbar-thumb {
+html.fort-active ::-webkit-scrollbar-thumb {
   background: rgba(201, 168, 76, 0.4);
   border-radius: 3px;
 }
-::-webkit-scrollbar-thumb:hover {
+html.fort-active ::-webkit-scrollbar-thumb:hover {
   background: rgba(201, 168, 76, 0.6);
 }
 
-html { overflow-x: clip; }
-body { overflow-x: clip; }
-img, svg { max-width: 100%; }
+html.fort-active, html.fort-active body { overflow-x: clip; }
 
-html.lenis, html.lenis body { height: auto; }
+html.fort-active.lenis, html.fort-active.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-stopped { overflow: hidden; }
 
@@ -131,7 +96,7 @@ html.lenis, html.lenis body { height: auto; }
 .gold-frame::after { content: ''; position: absolute; inset: 5px; border: 1px solid rgba(217,180,90,.2); }
 @media (min-width: 768px) { .gold-frame { inset: 22px; } }
 
-html.intro-open, html.intro-open body { overflow: hidden; }
+html.fort-active.intro-open, html.fort-active.intro-open body { overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
   .lantern-flame, .petal, .star, .animate-bounce, .animate-ping { animation: none !important; }

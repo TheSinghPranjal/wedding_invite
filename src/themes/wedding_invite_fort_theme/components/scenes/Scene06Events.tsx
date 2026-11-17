@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from '../../lib/gsap';
-import weddingData, { type WeddingEvent } from '../../data/weddingData';
+import weddingData, { type WeddingEvent } from '../../../../data/weddingData';
 import { formatLongDate, formatWeekday } from '../../lib/dates';
 import { Mandala, Marigold } from '../art/Ornament';
 import Palace from '../art/Palace';

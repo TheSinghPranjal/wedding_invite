@@ -1,8 +1,9 @@
 import type { CSSProperties } from 'react';
 
-export const PALACE_SRC = '/images/palace.jpg';
+import palaceUrl from '../../assets/palace.jpg';
+export const PALACE_SRC = palaceUrl;
 
-/** Illuminated palace artwork (public/images/palace.jpg). Cropped by its container via object-fit. */
+/** Illuminated palace artwork (assets/palace.jpg). Cropped by its container via object-fit. */
 export default function Palace({ className = '', style, position = '50% 100%' }: { className?: string; style?: CSSProperties; position?: string }) {
   return (
     <img

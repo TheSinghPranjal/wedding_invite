@@ -1,5 +1,5 @@
 import { useSyncExternalStore } from 'react';
-import weddingData from '../data/weddingData';
+import weddingData from '../../../data/weddingData';
 
 type State = { playing: boolean; failed: boolean };
 let state: State = { playing: false, failed: false };

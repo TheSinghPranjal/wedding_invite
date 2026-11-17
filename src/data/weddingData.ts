@@ -121,3 +121,6 @@ const weddingData: WeddingData = {
 };
 
 export default weddingData;
+
+/** Named export for consumers that prefer it. */
+export { weddingData };

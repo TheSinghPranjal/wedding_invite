@@ -1,0 +1,11 @@
+.foot { position: relative; overflow: hidden; background: #3d0c16; color: #ecdcb8; padding: 4rem clamp(1rem, 5vw, 4rem) 1.5rem; }
+.foot__mandala { position: absolute; right: -80px; top: -80px; width: 360px; color: rgba(214, 178, 94, .14); }
+.foot__grid { position: relative; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 2.5rem; max-width: 1200px; margin: 0 auto; }
+.foot h3 { font-family: 'Playfair Display', serif; color: #d6b25e; font-size: 1rem; letter-spacing: .15em; text-transform: uppercase; margin: 0 0 1rem; }
+.foot p, .foot a { color: #ecdcb8; margin: 0 0 .5rem; display: block; text-decoration: none; font-size: 1.05rem; }
+.foot a:hover { color: #d6b25e; }
+.foot__brand { font-family: 'Playfair Display', serif; font-size: 1.5rem; }
+.foot__brand em { font-family: 'Great Vibes', cursive; font-style: normal; color: #d6b25e; font-size: 1.9rem; }
+.foot__copy { position: relative; text-align: center; margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid rgba(214, 178, 94, .25); font-size: .9rem; opacity: .8; }
+@media (max-width: 760px) { .foot__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .foot__grid { grid-template-columns: 1fr; } }

@@ -1,4 +1,4 @@
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import { brandDate, downloadIcs } from '../../lib/dates';
 import Palace from '../art/Palace';
 import Stars from '../art/Stars';

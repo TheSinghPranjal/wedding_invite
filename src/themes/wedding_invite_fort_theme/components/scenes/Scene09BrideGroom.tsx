@@ -1,4 +1,4 @@
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import Reveal from '../ui/Reveal';
 import Portrait from '../ui/Portrait';
 import Petals from '../art/Petals';

@@ -1,4 +1,4 @@
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import { Divider } from '../art/Ornament';
 import Reveal from '../ui/Reveal';
 

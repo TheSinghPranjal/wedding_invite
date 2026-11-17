@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from '../../lib/gsap';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import Palace from '../art/Palace';
 import Stars from '../art/Stars';
 import Reveal from '../ui/Reveal';

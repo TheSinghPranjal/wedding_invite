@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from '../../lib/gsap';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import { brandDate, getWeddingInstant } from '../../lib/dates';
 import { useCountdown } from '../../hooks/useCountdown';
 import Car from '../art/Car';

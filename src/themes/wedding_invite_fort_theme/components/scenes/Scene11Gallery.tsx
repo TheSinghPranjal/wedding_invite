@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import Reveal from '../ui/Reveal';
 
 /** Scene 11 – filterable gallery from weddingData.gallery (category filter, lightbox). */

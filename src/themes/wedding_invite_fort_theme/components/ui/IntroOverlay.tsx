@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import { brandDate } from '../../lib/dates';
 import { music } from '../../lib/music';
 import Stars from '../art/Stars';

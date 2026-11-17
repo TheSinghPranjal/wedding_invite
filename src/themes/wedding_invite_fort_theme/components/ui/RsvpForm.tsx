@@ -1,5 +1,5 @@
 import { useState, type FormEvent } from 'react';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 
 type Status = 'idle' | 'sending' | 'done' | 'error';
 

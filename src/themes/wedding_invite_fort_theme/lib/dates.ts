@@ -1,4 +1,4 @@
-import weddingData from '../data/weddingData';
+import weddingData from '../../../data/weddingData';
 
 const IST_OFFSET = '+05:30';
 

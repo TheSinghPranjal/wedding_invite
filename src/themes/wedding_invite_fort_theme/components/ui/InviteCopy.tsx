@@ -1,4 +1,4 @@
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import { brandDate } from '../../lib/dates';
 import { Divider, Mandala } from '../art/Ornament';
 

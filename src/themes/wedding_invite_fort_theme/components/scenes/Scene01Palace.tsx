@@ -1,7 +1,7 @@
 import { useMemo, useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { gsap } from '../../lib/gsap';
-import weddingData from '../../data/weddingData';
+import weddingData from '../../../../data/weddingData';
 import { brandDate } from '../../lib/dates';
 import Palace from '../art/Palace';
 import Lantern from '../art/Lantern';

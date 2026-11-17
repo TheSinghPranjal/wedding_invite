@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import './styles/fort.css';
 import Lenis from 'lenis';
 import { gsap, ScrollTrigger } from './lib/gsap';
 import { useReducedMotion } from './hooks/useReducedMotion';
@@ -18,8 +20,9 @@ import MusicToggle from './components/ui/MusicToggle';
 import IntroOverlay from './components/ui/IntroOverlay';
 import ScrollProgress from './components/ui/ScrollProgress';
 import Bridge from './components/ui/Bridge';
+import weddingData from '../../data/weddingData';
 
-export default function App() {
+export default function WeddingInviteFort() {
   const reduce = useReducedMotion();
   const lenis = useRef<Lenis | null>(null);
   const [opened, setOpened] = useState(false);
@@ -36,6 +39,15 @@ export default function App() {
     return () => { gsap.ticker.remove(tick); l.destroy(); lenis.current = null; };
   }, [reduce]);
 
+  // Scope the theme's global rules (body bg, scrollbar, overflow) to this route only.
+  useEffect(() => {
+    const root = document.documentElement;
+    const prevTitle = document.title;
+    root.classList.add('fort-active');
+    document.title = `${weddingData.bride.firstName} & ${weddingData.groom.firstName} | Wedding Invitation`;
+    return () => { root.classList.remove('fort-active', 'intro-open'); document.title = prevTitle; };
+  }, []);
+
   useEffect(() => {
     document.documentElement.classList.toggle('intro-open', !opened);
     if (opened) { lenis.current?.start(); ScrollTrigger.refresh(); } else lenis.current?.stop();
@@ -44,6 +56,12 @@ export default function App() {
   return (
     <main>
       <IntroOverlay onOpen={() => setOpened(true)} />
+      <Link
+        to="/#themes"
+        className="fixed top-4 left-4 z-[60] rounded-full border border-gold/60 bg-midnight/70 px-4 py-1.5 text-xs tracking-widest uppercase text-ivory backdrop-blur hover:bg-midnight/90 transition-colors"
+      >
+        ← All themes
+      </Link>
       <ScrollProgress />
       <ScenePalace />
       <SceneLanterns />
