@@ -28,6 +28,7 @@ export default function SceneFamily() {
   const { bride, groom } = weddingData;
   return (
     <section id="scene-05" className="scene emerald-paper grain py-24 md:py-36 px-6 text-ivory">
+      <div className="absolute inset-0 paisley opacity-[.07]" />
       <Reveal><p className="text-center font-display text-2xl md:text-4xl gold-text">Our Families</p></Reveal>
       <Reveal delay={0.1}><Divider className="text-gold mt-5 mb-14 md:mb-20" /></Reveal>
       <div className="max-w-5xl mx-auto grid md:grid-cols-[1fr_auto_1fr] gap-14 md:gap-10 items-start">

@@ -6,6 +6,7 @@ import { formatLongDate, formatWeekday } from '../../lib/dates';
 import { Mandala, Marigold } from '../art/Ornament';
 import Palace from '../art/Palace';
 import Reveal from '../ui/Reveal';
+import Petals from '../art/Petals';
 import LinkButton from '../ui/LinkButton';
 
 interface Look { bg: string; ink: string; accent: string; sub: string }
@@ -75,6 +76,9 @@ function EventScene({ ev, index }: { ev: WeddingEvent; index: number }) {
       style={{ background: look.bg, color: look.ink, zIndex: index + 1 }}
       data-event={ev.id}
     >
+      <div className="absolute inset-0 paisley opacity-[.08]" />
+      <div className="gold-frame" style={{ borderColor: look.accent + '66' }} />
+      {ev.theme === 'haldi' && <Petals count={14} seed={index + 2} colors={['#f0a41e', '#e8861a', '#ffcf4d']} />}
       <div className={`${flip ? 'md:order-2' : ''} relative h-64 md:h-[70vh] overflow-hidden`} style={{ color: look.accent }}>
         {ev.image ? (
           <img src={ev.image} alt={ev.name} loading="lazy" className="ev-photo w-full h-full object-cover" />

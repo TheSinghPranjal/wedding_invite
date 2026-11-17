@@ -36,8 +36,9 @@ export default function SceneVenue() {
           <LinkButton href={venue.mapsUrl} tone="ivory" disabledLabel="Get Directions">Get Directions</LinkButton>
         </Reveal>
       </div>
-      <div className="v-palace relative h-[45vh] md:h-[55vh] mt-12 will-change-transform">
-        <Palace className="absolute bottom-0 w-full h-full" />
+      <div className="v-palace relative h-[50vh] md:h-[60vh] mt-12 will-change-transform">
+        <Palace className="absolute bottom-0 w-full h-full" position="50% 70%" />
+        <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-b from-transparent to-[#1a1326]" />
       </div>
     </section>
   );

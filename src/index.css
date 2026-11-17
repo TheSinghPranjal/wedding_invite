@@ -110,3 +110,29 @@ html.lenis, html.lenis body { height: auto; }
 .scene { position: relative; width: 100%; overflow: hidden; }
 .pin-stage { position: relative; height: 100vh; height: 100svh; width: 100%; overflow: hidden; }
 .no-scroll-anchor { overflow-anchor: none; }
+
+/* ---- enhancements ---- */
+.lantern-flame { animation: flicker 1.9s ease-in-out infinite alternate; animation-delay: var(--fd, 0s); transform-origin: center; transform-box: fill-box; }
+@keyframes flicker { 0% { opacity: .85; transform: scale(1); } 40% { opacity: 1; transform: scale(1.06); } 100% { opacity: .78; transform: scale(.96); } }
+
+.petal { position: absolute; top: -40px; animation: petal-fall linear infinite; will-change: transform; }
+@keyframes petal-fall {
+  0%   { transform: translate3d(0, -40px, 0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 1; }
+  50%  { transform: translate3d(var(--sway), 50vh, 0) rotate(200deg); }
+  100% { transform: translate3d(calc(var(--sway) * -0.6), 110vh, 0) rotate(420deg); opacity: .6; }
+}
+
+.paisley {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120' fill='none' stroke='%23ffffff' stroke-width='1'><path d='M60 14c22 0 34 16 34 34 0 22-18 30-30 44-10-14-28-22-28-44 0-18 10-34 24-34z'/><path d='M60 30c10 0 16 8 16 18 0 12-9 16-16 24-6-8-14-12-14-24 0-10 5-18 14-18z' opacity='.6'/><circle cx='60' cy='48' r='3'/><circle cx='12' cy='108' r='2'/><circle cx='108' cy='108' r='2'/><circle cx='12' cy='12' r='2'/><circle cx='108' cy='12' r='2'/></svg>");
+  background-size: 120px 120px;
+}
+.gold-frame { position: absolute; inset: 14px; border: 1px solid rgba(217,180,90,.45); pointer-events: none; }
+.gold-frame::after { content: ''; position: absolute; inset: 5px; border: 1px solid rgba(217,180,90,.2); }
+@media (min-width: 768px) { .gold-frame { inset: 22px; } }
+
+html.intro-open, html.intro-open body { overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+  .lantern-flame, .petal, .star, .animate-bounce, .animate-ping { animation: none !important; }
+}

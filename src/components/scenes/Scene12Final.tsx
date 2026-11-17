@@ -13,6 +13,7 @@ export default function SceneFinal() {
   return (
     <section id="scene-12" className="scene bg-gradient-to-b from-[#2a2a55] via-[#0d1b4a] to-[#050a22] text-ivory pt-28 text-center">
       <Stars count={70} seed={11} />
+      <div className="absolute inset-0 paisley opacity-[.05]" />
       <div className="relative z-10 px-6">
         <Reveal><p className="text-xs md:text-sm tracking-[0.5em] uppercase text-gold">With love and joy</p></Reveal>
         <Reveal delay={0.1}><h2 className="font-display text-5xl md:text-8xl mt-5">{bride.firstName} <span className="font-script text-gold">&amp;</span> {groom.firstName}</h2></Reveal>

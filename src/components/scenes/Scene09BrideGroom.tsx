@@ -1,6 +1,7 @@
 import weddingData from '../../data/weddingData';
 import Reveal from '../ui/Reveal';
 import Portrait from '../ui/Portrait';
+import Petals from '../art/Petals';
 
 /** Scene 9 – blush-pink editorial intro of the couple; photos come from weddingData. */
 export default function SceneBrideGroom() {
@@ -8,6 +9,7 @@ export default function SceneBrideGroom() {
   const people = [bride, groom];
   return (
     <section id="scene-09" className="scene blush-paper grain py-24 md:py-40 px-6 text-midnight">
+      <Petals count={16} seed={7} />
       <div className="text-center">
         <Reveal><p className="text-xs md:text-sm tracking-[0.5em] uppercase text-[#8a5a6e]">Meet the</p></Reveal>
         <Reveal delay={0.1}><h2 className="font-display text-5xl md:text-8xl mt-3 leading-none">BRIDE AND<br />GROOM</h2></Reveal>

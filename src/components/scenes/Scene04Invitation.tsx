@@ -28,6 +28,7 @@ export default function SceneInvitation() {
 
   return (
     <section id="scene-04" ref={root} className="scene emerald-paper grain py-24 md:py-40 px-5">
+      <div className="absolute inset-0 paisley opacity-[.07]" />
       <div className="inv-frame relative max-w-3xl mx-auto border border-gold/60 p-8 md:p-16 text-center text-ivory" style={{ clipPath: 'inset(0)' }}>
         <div className="absolute inset-2 border border-gold/30 pointer-events-none" />
         {[0, 1, 2, 3].map((i) => (
