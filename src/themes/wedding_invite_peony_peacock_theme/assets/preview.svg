@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 800"><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F3C9CF"/><stop offset="1" stop-color="#DE98A6"/></linearGradient>
+<pattern id="l" width="60" height="60" patternUnits="userSpaceOnUse"><g stroke="#fff" fill="none" opacity=".85"><path d="M30 0L60 30L30 60L0 30Z"/><circle cx="30" cy="30" r="9"/><circle cx="30" cy="30" r="3"/></g></pattern></defs>
+<rect width="600" height="800" fill="url(#g)"/><rect width="600" height="800" fill="url(#l)"/>
+<path d="M300 90C312 130 360 156 400 158C446 148 486 190 456 236C444 252 452 262 462 274V526C452 538 444 548 456 564C486 610 446 652 400 642C360 644 312 670 300 710C288 670 240 644 200 642C154 652 114 610 144 564C156 548 148 538 138 526V274C148 262 156 252 144 236C114 190 154 148 200 158C240 156 288 130 300 90Z" fill="#AF3155"/>
+<g fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" transform="translate(300 220)"><path d="M0 0C-30-20-60-30-76-20C-70-4-40 8-8 6M0 0C-6-34-6-62 6-74C26-64 30-32 8-4M0 0C30-18 60-24 74-12C64 6 34 12 6 8"/></g>
+<text x="300" y="330" text-anchor="middle" font-family="Georgia,serif" font-size="19" letter-spacing="4" fill="#FFF4F2">RATI &amp; PRANJAL ARE</text><text x="300" y="358" text-anchor="middle" font-family="Georgia,serif" font-size="19" letter-spacing="4" fill="#FFF4F2">GETTING MARRIED</text>
+<text x="300" y="440" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#FFF4F2">Save the</text><text x="300" y="506" text-anchor="middle" font-family="Georgia,serif" font-size="62" fill="#FFF4F2">Date</text>
+<text x="300" y="590" text-anchor="middle" font-family="Georgia,serif" font-size="22" letter-spacing="4" fill="#FFF4F2">FEBRUARY 4, 2027</text></svg>

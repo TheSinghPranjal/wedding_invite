@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Pinyon+Script&family=Great+Vibes&family=Poppins:wght@300;400;500&family=Tiro+Devanagari+Hindi&family=Noto+Serif+Devanagari:wght@400;600&display=swap');
+/* Theme 05 - Emerald Peacock Palace & Golden Heritage. Everything is prefixed ep- or scoped to .ep / html.ep-active. */
+
+.ep {
+  --teal: #075357; --royal: #126B67; --peacock: #276F82; --forest: #244B36; --gold: #C6A45D; --champ: #E5D1A2; --ivory: #F8F1E3; --sage: #E6EADB;
+  --sky: #F4D7A3; --lotus: #E6A9B0; --espresso: #271B17; --terra: #A56E4D; --k: 1;
+  font-family: 'Cormorant Garamond', Georgia, serif; color: var(--forest); background: #F8F1E3; -webkit-font-smoothing: antialiased;
+}
+@media (max-width: 700px) { .ep { --k: .5; } }
+html.ep-active, html.ep-active body { background: #F8F1E3; overflow-x: clip; scroll-behavior: auto; }
+html.ep-active ::selection { background: rgba(247, 197, 45, .35); }
+html.ep-active ::-webkit-scrollbar { width: 6px; } html.ep-active ::-webkit-scrollbar-track { background: #F8F1E3; } html.ep-active ::-webkit-scrollbar-thumb { background: rgba(247, 197, 45, .5); border-radius: 3px; }
+html.ep-active.intro-open, html.ep-active.intro-open body { overflow: hidden; }
+html.ep-active.lenis, html.ep-active.lenis body { height: auto; }
+.ep *, .ep *::before, .ep *::after { box-sizing: border-box; }
+.ep h1, .ep h2, .ep h3, .ep p { margin: 0; }
+.ep svg { display: block; max-width: none; }
+
+/* ---------- scaffolding: full-bleed stage with a portrait (9:16) board centred in it ---------- */
+.ep-scene { position: relative; width: 100%; overflow: hidden; }
+.ep-stage { position: relative; width: 100%; height: 100vh; height: 100svh; overflow: hidden; --bw: min(100vw, calc(100svh * .5625)); }
+.ep-board { position: absolute; top: 0; bottom: 0; left: calc(50% - var(--bw) / 2); width: var(--bw); container-type: inline-size; overflow: hidden; }
+@media (min-width: 800px) { .ep-board { border-radius: 26px; box-shadow: 0 30px 70px -24px rgba(135, 64, 82, .45); top: 12px; bottom: 12px; } }
+.ep-fill { position: absolute; inset: 0; }
+.ep-abs { position: absolute; }
+.ep-center { text-align: center; }
+.ep-text { position: absolute; left: 0; right: 0; z-index: 6; text-align: center; padding: 0 8cqw; }
+
+/* typography */
+.ep-display { font-family: 'Cinzel', 'Cormorant Garamond', serif; letter-spacing: .12em; text-transform: uppercase; font-weight: 400; line-height: 1.3; }
+.ep-serif { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; }
+.ep-names { font-family: 'Pinyon Script', 'Great Vibes', cursive; font-weight: 400; line-height: 1.05; }
+.ep-white { font-family: 'Great Vibes', cursive; font-weight: 400; line-height: 1.05; }
+.ep-sans { font-family: 'Poppins', sans-serif; font-weight: 300; }
+.ep-hi { font-family: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif; }
+.ep-paper::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 9; mix-blend-mode: multiply; opacity: .22;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='260'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 .6  0 0 0 0 .5  0 0 0 0 .4  0 0 0 .45 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"); }
+
+/* ornaments & motion */
+.ep-sides { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 1; color: #D5AD55; }
+.ep-orn { position: absolute; width: calc(var(--s) * var(--k)); height: calc(var(--s) * var(--k)); margin-top: calc(var(--s) * var(--k) * -.5); opacity: 0; will-change: transform, opacity; }
+.ep-orn svg { width: 100%; height: 100%; overflow: visible; }
+@media (prefers-reduced-motion: reduce) { .ep-orn { opacity: var(--op); } }
+.ep-ring { transform-box: fill-box; transform-origin: 50% 50%; animation: ep-spin var(--dur, 90s) linear infinite; }
+@keyframes ep-spin { to { transform: rotate(calc(360deg * var(--dir, 1))); } }
+.ep-breathe { animation: ep-spin var(--dur, 90s) linear infinite, ep-breathe 5s ease-in-out infinite alternate; }
+@keyframes ep-breathe { from { opacity: .55; scale: .92; } to { opacity: 1; scale: 1.06; } }
+.ep-pulse { animation: ep-pulse 3.2s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+@keyframes ep-pulse { 0%, 100% { opacity: .5; transform: scale(.9); } 50% { opacity: 1; transform: scale(1.15); } }
+.ep-twinkle { animation: ep-twinkle 3s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: center; }
+@keyframes ep-twinkle { from { opacity: .45; transform: scale(.8) rotate(0); } to { opacity: 1; transform: scale(1.12) rotate(18deg); } }
+.ep-sway { transform-box: fill-box; transform-origin: 50% 0; animation: ep-sway 5s ease-in-out infinite alternate; }
+.ep-sway-soft { transform-origin: 50% 100%; animation: ep-sway-soft 4.5s ease-in-out infinite alternate; }
+@keyframes ep-sway { from { transform: rotate(-3deg); } to { transform: rotate(3deg); } }
+@keyframes ep-sway-soft { from { transform: rotate(-.8deg); } to { transform: rotate(.8deg); } }
+.ep-swing { transform-origin: 50% 0; animation: ep-swing 4.4s ease-in-out infinite alternate; }
+@keyframes ep-swing { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+svg .ep-swing { transform-box: view-box; }
+.ep-b1 { animation-duration: 3.8s; } .ep-b2 { animation-duration: 4.6s; animation-delay: -1s; } .ep-b3 { animation-duration: 5.2s; animation-delay: -2s; }
+.ep-bloom { animation: ep-bloomup 3.6s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes ep-bloomup { from { transform: scale(.96); } to { transform: scale(1.04); } }
+.ep-float { animation: ep-floaty 5s ease-in-out infinite alternate; }
+@keyframes ep-floaty { from { transform: translateY(-5px); } to { transform: translateY(6px); } }
+.ep-trunk { animation: ep-trunk 3.4s ease-in-out infinite alternate; transform-box: view-box; }
+@keyframes ep-trunk { from { transform: rotate(-4deg); } to { transform: rotate(5deg); } }
+.ep-fx { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+.ep-spark { position: absolute; width: var(--sz); height: var(--sz); background: #fff; clip-path: polygon(50% 0, 60% 40%, 100% 50%, 60% 60%, 50% 100%, 40% 60%, 0 50%, 40% 40%); animation: ep-spark 2.6s ease-in-out infinite; }
+@keyframes ep-spark { 0%, 100% { opacity: .15; transform: scale(.6); } 50% { opacity: 1; transform: scale(1.1); } }
+.ep-petal { position: absolute; top: -40px; animation: ep-fall linear infinite; will-change: transform; }
+@keyframes ep-fall { 0% { transform: translate3d(0, -40px, 0) rotate(0); opacity: 0; } 8% { opacity: 1; } 50% { transform: translate3d(var(--sway), 50vh, 0) rotate(200deg); } 100% { transform: translate3d(calc(var(--sway) * -.6), 110vh, 0) rotate(420deg); opacity: .6; } }
+.ep-dust { position: absolute; border-radius: 50%; background: radial-gradient(circle, #FFF2C0, #D5AD55 60%, transparent 72%); animation: ep-dustf ease-in-out infinite; }
+@keyframes ep-dustf { 0%, 100% { transform: translateY(0) scale(1); opacity: .2; } 50% { transform: translateY(-26px) scale(1.5); opacity: 1; } }
+.ep-flame { animation: ep-flick 1.5s ease-in-out infinite alternate; transform-box: fill-box; transform-origin: 50% 100%; }
+@keyframes ep-flick { 0% { transform: scale(1, .94); opacity: .88; } 100% { transform: scale(1.08, 1.06); opacity: 1; } }
+.ep-umb { animation: ep-umbrot 6s ease-in-out infinite alternate; transform-origin: 50% 100%; }
+@keyframes ep-umbrot { from { transform: rotate(-4deg); } to { transform: rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) { .ep-ring, .ep-breathe, .ep-pulse, .ep-twinkle, .ep-sway, .ep-sway-soft, .ep-swing, .ep-bloom, .ep-float, .ep-trunk, .ep-spark, .ep-petal, .ep-dust, .ep-flame, .ep-umb { animation: none !important; } }
+.ep-fit { width: 100%; height: 100%; }
+
+/* ui */
+.ep-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 1.7rem; border: 1px solid currentColor; font-family: 'Poppins', sans-serif; font-size: .72rem; letter-spacing: .24em; text-transform: uppercase; background: transparent; color: inherit; cursor: pointer; text-decoration: none; transition: all .35s; border-radius: 999px; }
+.ep-btn:hover { background: #F7C52D; color: #5A0C22; border-color: #F7C52D; }
+.ep-btn--dark { color: #6B3A22; } .ep-btn--dark:hover { background: #6B3A22; color: #FFF6E6; border-color: #6B3A22; }
+.ep-btn[aria-disabled='true'] { opacity: .45; cursor: not-allowed; pointer-events: none; }
+.ep-btn:focus-visible, .ep-field:focus-visible { outline: 2px solid #F7C52D; outline-offset: 3px; }
+.ep-back { position: fixed; top: 14px; left: 14px; z-index: 60; padding: .45rem 1rem; border: 1px solid rgba(255, 246, 230, .6); border-radius: 999px; background: rgba(60, 7, 22, .65); backdrop-filter: blur(6px); color: #FFF6E6; font-family: 'Poppins', sans-serif; font-size: .64rem; letter-spacing: .2em; text-transform: uppercase; text-decoration: none; }
+.ep-music { position: fixed; right: 16px; bottom: 16px; z-index: 50; width: 50px; height: 50px; border-radius: 50%; border: 1px solid rgba(255, 246, 230, .7); background: rgba(60, 7, 22, .65); backdrop-filter: blur(6px); display: grid; place-items: center; cursor: pointer; transition: transform .3s; }
+.ep-music:hover { transform: scale(1.07); } .ep-music svg { width: 20px; height: 20px; fill: #FFF6E6; }
+.ep-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; transform-origin: 0 50%; transform: scaleX(0); background: linear-gradient(90deg, #F7C52D, #EE8A1D, #D9457A); }
+.ep-field { width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(107, 58, 34, .55); padding: .7rem 0; color: #3B2A20; font: inherit; font-size: 1.15rem; }
+.ep-label { font-family: 'Poppins', sans-serif; font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; color: #8A5A34; display: block; }
+.ep-err { color: #A3302A; font-size: .95rem; margin-top: .25rem; }
+.ep-choice { flex: 1; min-height: 48px; display: grid; place-items: center; border: 1px solid rgba(107, 58, 34, .5); border-radius: 12px; font-size: .95rem; cursor: pointer; text-align: center; padding: 0 .5rem; }
+.ep-choice:has(:checked) { background: #6B3A22; color: #FFF6E6; }
+.ep-intro { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 1.5rem; background: radial-gradient(ellipse at 50% 40%, #B3254F, #5A0C22); }
+.ep-photo { position: relative; overflow: hidden; border-radius: 999px 999px 14px 14px; border: 3px solid #D5AD55; aspect-ratio: 3 / 4; background: linear-gradient(160deg, #F4EFD2, #EFC9CF); box-shadow: 0 20px 40px -20px rgba(60, 40, 20, .5); }
+.ep-photo img { width: 100%; height: 100%; object-fit: cover; }
+.ep-photo__ph { position: absolute; inset: 0; display: grid; place-content: center; text-align: center; gap: .4rem; color: rgba(107, 58, 34, .6); font-family: 'Poppins', sans-serif; letter-spacing: .24em; font-size: .66rem; text-transform: uppercase; }
+.ep-photo__ph b { font-family: 'Sacramento', cursive; font-weight: 400; font-size: 4.5rem; letter-spacing: 0; color: rgba(107, 58, 34, .45); }
+.ep-link { color: inherit; text-underline-offset: 4px; }
+.ep-divider { width: 70%; height: 22px; margin: 0 auto; }
+@keyframes ep-roadmove { to { background-position: 0 200px; } }
+@media (prefers-reduced-motion: no-preference) { .ep-scene.is-pre .g-anim { opacity: 0; } }
+.ep-ch { display: inline-block; white-space: pre; }
+.ep-fit-h { height: 100%; width: auto; } .ep-fit-w { width: 100%; height: auto; }
+.ep-torana { position: absolute; top: 0; left: 0; width: 100%; height: 14cqw; }
+.ep-spot { position: absolute; inset: 0; background: conic-gradient(from 180deg at 50% -6%, transparent 0 40deg, rgba(255, 226, 150, .22) 52deg, transparent 64deg 296deg, rgba(255, 226, 150, .22) 308deg, transparent 320deg), radial-gradient(ellipse at 50% 82%, rgba(247, 197, 45, .3), transparent 55%); animation: ep-spot 4s ease-in-out infinite; }
+@keyframes ep-spot { 50% { opacity: .55; } }
+.ep-dance { transform-origin: 50% 100%; animation: ep-dance 3.2s ease-in-out infinite alternate; }
+@keyframes ep-dance { from { transform: rotate(-1.4deg); } to { transform: rotate(1.4deg); } }
+@media (prefers-reduced-motion: reduce) { .ep-spot, .ep-dance { animation: none; } }
+.ep-umb-g { transform-box: view-box; transform-origin: 132px 52px; animation: ep-umbrot 6s ease-in-out infinite alternate; }
+@media (prefers-reduced-motion: reduce) { .ep-umb-g { animation: none; } }
+.tr-bot { position: absolute; inset: 0; clip-path: circle(var(--r, 0px) at 100% 55%); background: #6F705A; z-index: 3; }
+.tr-ring { position: absolute; z-index: 4; right: 0; top: 55%; width: calc(var(--r, 0px) * 2.12); height: calc(var(--r, 0px) * 2.12); transform: translate(50%, -50%); pointer-events: none; color: #D5AD55; }
+
+
+/* theme-5 ui palette */
+.ep-btn { color: #244B36; border-color: #244B36; font-family: 'Poppins', sans-serif; font-weight: 400; }
+.ep-btn:hover { background: #126B67; color: #F8F1E3; border-color: #126B67; }
+.ep-btn--light { color: #E5D1A2; border-color: rgba(229, 209, 162, .8); } .ep-btn--light:hover { background: #E5D1A2; color: #075357; border-color: #E5D1A2; }
+.ep-back { border-color: rgba(198, 164, 93, .7); background: rgba(7, 83, 87, .78); color: #E5D1A2; }
+.ep-music { border-color: rgba(198, 164, 93, .8); background: rgba(7, 83, 87, .8); } .ep-music svg { fill: #E5D1A2; }
+.ep-progress { background: linear-gradient(90deg, #C6A45D, #E5D1A2, #126B67); }
+.ep-field { border-bottom-color: rgba(229, 209, 162, .6); color: #F8F1E3; } .ep-label { color: #E5D1A2; } .ep-err { color: #FFB4A2; }
+.ep-choice { border-color: rgba(229, 209, 162, .5); } .ep-choice:has(:checked) { background: #C6A45D; color: #075357; }
+.ep-intro { background: radial-gradient(ellipse at 50% 30%, #126B67, #053B3F); }
+.ep-photo { border-color: #C6A45D; background: linear-gradient(160deg, #F8F1E3, #E6EADB); }
+.ep-photo__ph { color: rgba(36, 75, 54, .6); } .ep-photo__ph b { font-family: 'Pinyon Script', cursive; color: rgba(36, 75, 54, .4); }
+.ep-flutter { animation: ep-flut 1.2s ease-in-out infinite alternate; }
+@keyframes ep-flut { from { transform: scaleX(1); } to { transform: scaleX(.55); } }
+.ep-fan { animation: ep-fan 5s ease-in-out infinite alternate; }
+@keyframes ep-fan { from { transform: scale(.97); } to { transform: scale(1.02); } }
+.ep-water { animation: ep-water 2.4s ease-in-out infinite alternate; }
+@keyframes ep-water { from { opacity: .35; } to { opacity: .95; } }
+.ep-ring-knock { animation: ep-knock 3.6s ease-in-out infinite alternate; }
+@keyframes ep-knock { from { transform: rotate(-3deg); } to { transform: rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) { .ep-flutter, .ep-fan, .ep-water, .ep-ring-knock { animation: none; } }
+.ep-hang { transform-origin: 50% 0; animation: ep-sway 4.8s ease-in-out infinite alternate; }
+.ep-sway-soft { transform-origin: 50% 100%; animation: ep-sway-soft 3.4s ease-in-out infinite alternate; }
+@keyframes ep-sway-soft { from { transform: rotate(-1deg); } to { transform: rotate(1.2deg); } }
+.ep-hand { transform-origin: 230px 150px; animation: ep-handup 2.8s ease-in-out infinite alternate; }
+@keyframes ep-handup { from { transform: rotate(-3deg); } to { transform: rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) { .ep-hang, .ep-sway-soft, .ep-hand { animation: none; } }
+.ep-spot { position: absolute; inset: 0; background: conic-gradient(from 180deg at 50% -6%, transparent 0 40deg, rgba(255, 236, 190, .18) 52deg, transparent 64deg 296deg, rgba(255, 236, 190, .18) 308deg, transparent 320deg), radial-gradient(ellipse at 50% 82%, rgba(229, 209, 162, .28), transparent 55%); animation: ep-spot 4s ease-in-out infinite; }
+@keyframes ep-spot { 50% { opacity: .55; } }
+.ep-dance { transform-origin: 50% 100%; animation: ep-dance 3.2s ease-in-out infinite alternate; }
+@keyframes ep-dance { from { transform: rotate(-1.4deg); } to { transform: rotate(1.4deg); } }
+.ep-torana { position: absolute; top: 0; left: 0; width: 100%; height: 14cqw; }
+.ep-link { color: inherit; text-underline-offset: 4px; }
+@media (prefers-reduced-motion: reduce) { .ep-spot, .ep-dance { animation: none; } }
+.ep-choice { color: #F8F1E3; }
